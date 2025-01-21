@@ -1,21 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .card-auth {
+    @apply w-[900px] h-[700px] grid grid-cols-1 md:grid-cols-2 bg-white shadow-md rounded-sm overflow-hidden relative
+  }
+
+  .auth-greeting {
+    @apply w-full h-full relative bg-primary flex-col items-center justify-center z-50 hidden md:flex
+  }
+
+  .auth-form {
+    @apply h-full flex flex-col items-center justify-center p-7 z-40 relative
+  }
+
+  .white-circle {
+    @apply w-2 h-2 bg-white rounded-full
+  }
 }
